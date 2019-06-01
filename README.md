@@ -1,2 +1,4 @@
-# biggeorge75.github.io
-Vue JS matek
+# vuejs-matek
+Vue JS gyakorlás
+[próba oldal](http://kedvencwebshop.hu/matek)
+

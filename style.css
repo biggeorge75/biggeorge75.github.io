@@ -1,0 +1,130 @@
+body {
+    background-color: palegoldenrod
+}
+#vue-app {
+    width: 95%;
+    padding: 10px;
+    margin: 30px auto;
+    border: 2px solid #73AD21
+}
+#focim {
+    margin-top: 20px;
+    text-align: center
+}
+section {
+    width: 100%
+}
+section div {
+    float: left;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid silver;
+    background-color: lightgoldenrodyellow
+}
+#szamEddig {
+    width: 340px;
+    text-align: center
+}
+#eredmeny {
+    width: 140px;
+    font-size: 80px;
+    margin-left: 30px;
+    line-height: 90px;
+    text-align: center
+}
+#kerdojel {
+    font-size: 80px;
+    line-height: 90px;
+    text-align: center
+}
+#egyenlo {
+    font-size: 80px;
+    line-height: 80px;
+    text-align: center
+}
+#elsoSzam {
+    font-size: 80px;
+    line-height: 90px;
+    text-align: center
+}
+#masodikSzam {
+    font-size: 80px;
+    line-height: 90px;
+    text-align: center
+}
+#muvelet {
+    font-size: 80px;
+    line-height: 80px;
+    text-align: center
+}
+#inputEredmeny {
+    width: 47px;
+    margin-top: 20px;
+    text-align: center
+}
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type=number] {
+-moz-appearance: textfield;
+}
+#collapseExample {
+    margin-top: 20px
+}
+#szamlalo {
+    float: right;
+    font-size: 20px;
+    margin-right: 20px
+}
+#ujFeladat {
+    height: 50px
+}
+
+@media (max-width: 770px) {
+    section div {  
+        margin: 3px;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid silver;
+        background-color: lightgoldenrodyellow      
+    }
+    #vue-app {
+        width: 100%;
+        padding: 0px;
+        margin: 0px auto;
+        border: 2px solid rgb(238, 111, 164)
+    }
+    #elsoSzam, #muvelet, #masodikSzam, #egyenlo, #eredmeny {
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center
+    }
+     #szorzotablaBtn{
+        display: none
+    }
+    #inputEredmeny{
+        width: 80px; 
+        margin-top: 5px;
+        font-size: 26px;
+        margin-left: 5px
+    }
+    #eredmeny {
+        width: 50px; 
+        margin-left: 10px;
+        line-height: 25px;
+        text-align: center
+    }
+    #okButton{
+        margin-left: 5px
+    }
+    #szamlalo{
+        margin-top: 5px
+    }
+    #szamEddig {
+        width: 280px;
+        text-align: center
+    }   
+  }
