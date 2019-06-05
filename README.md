@@ -1,4 +1,4 @@
 # vuejs-matek
 Vue JS gyakorlás
-[próba oldal](http://kedvencwebshop.hu/matek)
+[próba oldal](http://biggeorge75.github.io)
 
