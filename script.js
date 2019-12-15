@@ -1,7 +1,7 @@
 new Vue({
     el: '#vue-app',
     data: {
-        focim: "Matek Gyakorlás",
+        focim: "Matek Gyakorlás Natinak",
         random1: '',
         random2: '',
         random3: '',
@@ -38,7 +38,7 @@ new Vue({
                 
             }
             else{
-                alert('Sajnos nem jó, próbáld újra! :(');
+                alert('Nati, sajnos nem jó, próbáld újra! :(');
                 this.szamlalo = 0;
             };
             this.eredmeny = '';
