@@ -30,7 +30,7 @@ new Vue({
                 this.osszeg = this.random1 / this.random2;
             };
             if (this.osszeg == this.eredmeny) {
-                alert('Ügyes vagy, jó lett az eredmény :)');
+                alert('Ügyes vagy Nati, jó lett az eredmény :)');
                 this.random1 = '';
                 this.random2 = '';
                 this.randomNumber();
