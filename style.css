@@ -78,9 +78,6 @@ input[type=number] {
     margin-top: 10px;
     margin-left: 10px
 }
-#ujFeladat {
-    height: 50px
-}
 
 @media (max-width: 770px) {
     section div {  
