@@ -9,8 +9,7 @@ new Vue({
         randomMuvelet: [
             '+',
             '-',
-            '*',
-            '/'
+            '*'
         ],
         muveletMelyik: '1',
         osszeg: '',
