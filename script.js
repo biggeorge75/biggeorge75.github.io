@@ -24,12 +24,10 @@ new Vue({
             } else if (this.random3 == 1) {
                 this.osszeg = this.random1 - this.random2;
             } else if (this.random3 == 2) {
-                this.osszeg = this.random1 * this.random2;
-            } else if (this.random3 == 3) {
-                this.osszeg = this.random1 / this.random2;
+                this.osszeg = this.random1 * this.random2;     
             };
             if (this.osszeg == this.eredmeny) {
-                alert('Ügyes vagy Nati, jó lett az eredmény :)');
+                alert('Ügyes vagy Nati, jó lett az eredmény. Kaptál 1 pontot :)');
                 this.random1 = '';
                 this.random2 = '';
                 this.randomNumber();
@@ -37,7 +35,7 @@ new Vue({
                 
             }
             else{
-                alert('Nati, sajnos nem jó, próbáld újra! :(');
+                alert('Nati, sajnos nem jó, próbáld újra!  :(');
                 this.szamlalo = 0;
             };
             this.eredmeny = '';
