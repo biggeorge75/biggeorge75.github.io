@@ -75,7 +75,8 @@ input[type=number] {
 }
 #szamlalo {
     font-size: 20px;
-    margin-right: 20px
+    margin-top: 10px;
+    margin-left: 10px
 }
 #ujFeladat {
     height: 50px
