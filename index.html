@@ -1,77 +1,132 @@
 <!DOCTYPE html>
 <html lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Matek Gyakorlás - VUE JS</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Matek Gyakorlás - VUE JS</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <body>
+        <div class="container" id="vue-app">
+            <h1 class="mt-0 mb-4" id="focim">{{ focim }}</h1>
 
-<body>
-    <div class="container" id="vue-app">
-        <h1 class="mt-0 mb-4" id="focim">{{ focim }}</h1>
+            <button
+                id="ujFeladat"
+                class="btn btn-danger ml-1"
+                @click="randomNumber"
+            >
+                <i class="fas fa-plus"></i> Új feladat
+            </button>
 
-        <button id="ujFeladat" class="btn btn-danger ml-1" @click="randomNumber">
-            <i class="fas fa-plus"></i> Új feladat</button>
+            <button
+                class="btn btn-dark"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+            >
+                <i class="fas fa-cog"></i> Beállítások
+            </button>
+            <button
+                class="btn btn-info"
+                id="szorzotablaBtn"
+                type="button"
+                data-toggle="collapse"
+                data-target="#szorzotabla"
+                aria-expanded="false"
+                aria-controls="szorzotabla"
+            >
+                <i class="fas fa-question-circle"></i> Szorzótábla
+            </button>
+            <p id="szamlalo">Eredmény: {{ szamlalo }}</p>
+            <section class="mt-2">
+                <div id="elsoSzam">{{ random1 }}</div>
+                <div id="muvelet">{{ randomMuvelet[this.random3] }}</div>
+                <div id="masodikSzam">{{ random2 }}</div>
+                <div id="egyenlo">=</div>
+                <div id="eredmeny">{{ eredmeny }}</div>
+            </section>
 
-        <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            <i class="fas fa-cog"></i> Beállítások
-        </button>
-        <button class="btn btn-info" id="szorzotablaBtn" type="button" data-toggle="collapse" data-target="#szorzotabla" aria-expanded="false"
-            aria-controls="szorzotabla">
-            <i class="fas fa-question-circle"></i> Szorzótábla
-        </button>
-        <p id="szamlalo">Eredmény: {{ szamlalo }}</p>
-        <section class="mt-2">
-
-            <div id="elsoSzam">{{ random1 }}</div>
-            <div id="muvelet">{{ randomMuvelet[this.random3] }}</div>
-            <div id="masodikSzam">{{ random2 }}</div>
-            <div id="egyenlo">=</div>
-            <div id="eredmeny">{{ eredmeny }}</div>
-        </section>
-
-        <div id="input">
-            <input type="number" v-model="eredmeny" id="inputEredmeny" ref="refinput" @keyup.enter="eredmenySzamitas()">
-        </div>
-        <div class="mt-2">
-            <button class="btn btn-success" id="okButton" @click="eredmenySzamitas">OK</button>
-        </div>
-        <br>
-        <div class="collapse ml-1" id="collapseExample">
-            <div class="card card-body">
-                <h4 class="mb-4">Beállítások</h4>
-                <p>
-                    <input type="range" min="1" max="99" v-model="szamEddig" id="szamEddig">
-                    <br> {{ szamEddig}}-ig szeretném kérni a számokat!</p>
-                <hr>
-                <p>
-                    <input type="range" min="1" max="3" v-model="muveletMelyik" id="muveletMelyik">
-                    <br> {{ muveletMelyik}}</p>
-                <p>1: összeadás
-                    <br> 2: összeadás+kivonás
-                    <br> 3: összeadás+kivonás+szorzás
-                </p>
+            <div id="input">
+                <input
+                    type="number"
+                    v-model="eredmeny"
+                    id="inputEredmeny"
+                    ref="refinput"
+                    @keyup.enter="eredmenySzamitas()"
+                />
+            </div>
+            <div class="mt-2">
+                <button
+                    class="btn btn-success"
+                    id="okButton"
+                    @click="eredmenySzamitas"
+                >
+                    OK
+                </button>
+            </div>
+            <br />
+            <div class="collapse ml-1" id="collapseExample">
+                <div class="card card-body">
+                    <h4 class="mb-4">Beállítások</h4>
+                    <p>
+                        <input
+                            type="range"
+                            min="1"
+                            max="99"
+                            v-model="szamEddig"
+                            id="szamEddig"
+                        />
+                        <br />
+                        {{ szamEddig}}-ig szeretném kérni a számokat!
+                    </p>
+                    <hr />
+                    <p>
+                        <input
+                            type="range"
+                            min="1"
+                            max="3"
+                            v-model="muveletMelyik"
+                            id="muveletMelyik"
+                        />
+                        <br />
+                        {{ muveletMelyik}}
+                    </p>
+                    <p>
+                        1: összeadás <br />
+                        2: összeadás+kivonás <br />
+                        3: összeadás+kivonás+szorzás
+                    </p>
+                </div>
+            </div>
+            <div class="collapse ml-1" id="szorzotabla">
+                <div class="card card-body">
+                    <h4 class="mb-4">Szorzótábla</h4>
+                    <img
+                        src="szorzotabla-vue.png"
+                        width="420px"
+                        alt="Szorzótábla"
+                    />
+                </div>
             </div>
         </div>
-        <div class="collapse ml-1" id="szorzotabla">
-            <div class="card card-body">
-                <h4 class="mb-4">Szorzótábla</h4>
-                <img src="szorzotabla-vue.png" alt="Szorzótábla">
-            </div>
-        </div>
-    </div>
-    <br>
+        <br />
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <script defer src="script.js"></script>
-</body>
-
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script defer src="script.js"></script>
+    </body>
 </html>
