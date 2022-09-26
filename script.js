@@ -1,7 +1,7 @@
 new Vue({
     el: '#vue-app',
     data: {
-        focim: "Matek Gyakorlás Natinak",
+        focim: "Matek Gyakorlás",
         random1: '',
         random2: '',
         random3: '',
@@ -27,7 +27,7 @@ new Vue({
                 this.osszeg = this.random1 * this.random2;     
             };
             if (this.osszeg == this.eredmeny) {
-                alert('Ügyes vagy Nati, jó lett az eredmény. Kaptál 1 pontot :)');
+                alert('Ügyes vagy, jó lett az eredmény. Kaptál 1 pontot :)');
                 this.random1 = '';
                 this.random2 = '';
                 this.randomNumber();
@@ -35,7 +35,7 @@ new Vue({
                 
             }
             else{
-                alert('Nati, sajnos nem jó, próbáld újra!  :(');
+                alert('Sajnos nem jó, próbáld újra!  :(');
                 this.szamlalo = 0;
             };
             this.eredmeny = '';
